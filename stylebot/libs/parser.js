@@ -955,7 +955,8 @@ CSSScanner.prototype = {
   startsWithIdent: function(aFirstChar, aSecondChar) {
     var code = aFirstChar.charCodeAt(0);
     return this.isIdentStart(aFirstChar) ||
-           (aFirstChar == "-" && this.isIdentStart(aSecondChar));
+      (aFirstChar == "-" && this.isIdentStart(aSecondChar)) ||
+      (aFirstChar == "-" && aSecondChar == "-");
   },
 
   isIdent: function(c) {
